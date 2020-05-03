@@ -1,0 +1,19 @@
+.blog-container{
+    padding: 10px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    box-shadow: 0px 3px #eee;
+    width: 700px;
+    min-height: 450px;
+    display: inline-grid;
+    background-color: #f9fcfb;
+
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.btn-delete{
+    background-color: #fd5e53;
+}
