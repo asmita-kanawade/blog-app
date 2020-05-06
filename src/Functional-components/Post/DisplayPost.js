@@ -49,7 +49,8 @@ const Post = (props) => {
     <h1>{blog.title}</h1>
     <p>{blog.body}</p>
     <h4>Author: {blog.username}</h4>
-    <button className=" btn btn-goBack" onClick={() => redirectToHome(blog)}>Go back</button>
+    <button 
+    className=" btn btn-goBack" onClick={() => redirectToHome(blog)}>Go back</button>
     {currentUser === blog.username ?
       <button className="btn btn-green" onClick={() => redirectToEdit(blog)}>Edit</button> : ""}
     {currentUser === blog.username ?

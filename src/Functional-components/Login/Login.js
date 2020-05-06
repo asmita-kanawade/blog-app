@@ -37,14 +37,14 @@ export default class Login extends React.Component {
         let username = this.state.username;
         
         if (username === null || username.length === 0) {
-            userErr = <strong>Please enter username</strong>;
+            userErr = <strong className='login-error'>Please enter username</strong>;
         }
         this.setState({userErrormessage: userErr});
 
         let password = this.state.password;
         
         if (password === null || password.length === 0) {
-            passwordErr = <strong>Please enter password</strong>;
+            passwordErr = <strong className='login-error'>Please enter password</strong>;
         }
 
         this.setState({passwordErrormessage: passwordErr});
@@ -132,8 +132,8 @@ export default class Login extends React.Component {
                  className="inp"
                  type='submit' />
                 <span className='newUser'>New user?</span>
-                <div className='btn-div'><button className='btn btn-link'><Link to='/Signup'> Signup </Link></button></div>
-                {this.state.loginErrorMessage}
+                <div className='btn-div'><button className='btn btn-link-login'><Link to='/Signup'> Signup </Link></button></div>
+                <div className='error-div-login'>{this.state.loginErrorMessage}</div>
                 
             </form>
             </div>

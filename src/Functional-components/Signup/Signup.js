@@ -43,7 +43,7 @@ export default class Signup extends React.Component {
         let username = this.state.username;
         
         if (username === null || username.length === 0 ) {
-            userErr = <strong>Please enter username</strong>;
+            userErr = <strong className='signup-error'>Please enter username</strong>;
             signupInvalid = true;
         }
         this.setState({userErrormessage: userErr});
@@ -51,7 +51,7 @@ export default class Signup extends React.Component {
         let password = this.state.password;
         
         if (password === null || password.length === 0) {
-            passwordErr = <strong>Please enter password</strong>;
+            passwordErr = <strong className='signup-error'>Please enter password</strong>;
             signupInvalid = true;
         }
 
@@ -60,14 +60,14 @@ export default class Signup extends React.Component {
         let repeatedpassword = this.state.repeatedpassword;
         
         if (repeatedpassword === null || repeatedpassword.length === 0) {
-            repeatedpasswordErr = <strong>Please enter password again</strong>;
+            repeatedpasswordErr = <strong className='signup-error'>Please enter password again</strong>;
             signupInvalid = true;
         }
 
         this.setState({repeatedpasswordErrormessage: repeatedpasswordErr});
 
         if(repeatedpassword !== password ){
-            passwordMismatchErr = <strong>Both password should be same</strong>;
+            passwordMismatchErr = <strong className='signup-error'>Both password should be same</strong>;
             signupInvalid = true;
         }
         this.setState({repeatedpasswordErrormessage: passwordMismatchErr});
@@ -137,7 +137,8 @@ export default class Signup extends React.Component {
                     value={this.state.username}
                     onChange={this.myChangeHandler}
                 />
-                {this.state.userErrormessage}
+                <div>{this.state.userErrormessage}</div>
+              
 
                 <p className='p'>Password:</p>
                 <input 
@@ -147,7 +148,7 @@ export default class Signup extends React.Component {
                     value={this.state.password}
                     onChange={this.myChangeHandler}
                 />
-                {this.state.passwordErrormessage}
+                <div>{this.state.passwordErrormessage}</div>
 
                 <p className='p'>Re-Enter Password:</p>
                 <input 
@@ -157,14 +158,14 @@ export default class Signup extends React.Component {
                     value={this.state.repeatedPassword}
                     onChange={this.myChangeHandler}
                 />
-                {this.state.repeatedpasswordErrormessage}
+                <div>{this.state.repeatedpasswordErrormessage}</div>
                 <br />
                 <br />
                 <input className='inp' type='submit' />
                 <span className='newUser'>Already resisterd?</span>
-                <div className='btn-div'><button className='btn btn-link'><Link to='/Login'> Login </Link></button></div>
-                {this.state.signupErrorMessage}
-                {this.state.retry}
+                <div className='btn-div'><button className='btn btn-link-signup'><Link to='/Login'> Login </Link></button></div>
+                <div className='error-div-signup'>{this.state.signupErrorMessage}</div>
+                <div> {this.state.retry}</div>
             </form>
             </div>
         );

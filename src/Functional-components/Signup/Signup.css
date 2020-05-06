@@ -8,6 +8,14 @@
     border: 1px solid #ccc;
     min-height: 450px;
 }
+.btn-link-signup{
+    position: relative;
+    top: 0;
+    left: 145px;
+}
+.signup-error{
+    color: red;
+}
 
 .container-signup{
     padding: 30px;
@@ -42,4 +50,10 @@ input[type=submit] {
     background-color: #4CAF50;
     color: white;
     cursor: pointer;
-    }
+}
+.error-div-signup{
+    position: relative;
+    top: 60px;
+    right: 173px;
+    color: red;
+}
