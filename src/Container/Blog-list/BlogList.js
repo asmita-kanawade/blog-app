@@ -59,6 +59,7 @@ export default class BlogList extends React.Component {
                 <Header 
                   changed={(event) => this.searchHandler(event)}
                 />
+                <div className='posts'>
                 { this.state.blogs.map(blog =>
                   <div
                     key={blog._id}
@@ -66,12 +67,13 @@ export default class BlogList extends React.Component {
                     className="container"
                     onClick={this.redirectToTarget.bind(this, blog)}
                   >
-                      <h1>{blog.title}</h1>
+                      <h3>{blog.title.length >= 70 ? blog.title.substring(0, 70) + "..." : blog.title.substring(0, blog.title.length)}</h3>
                       <p>{blog.body.length >= 100 ? blog.body.substring(0, 100) + "..." : blog.body.substring(0, blog.body.length)}</p>
                       <h4>Author: {blog.username}</h4> 
                   </div>
                   )
                  }
+                 </div>
               </>
   }
 }

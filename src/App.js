@@ -37,6 +37,7 @@ class App extends Component {
 
   render() {
     return (
+      <div className='main-container'>
         <BrowserRouter>
           <Switch>
             <Route path="/" exact component={BlogList}/>
@@ -47,6 +48,7 @@ class App extends Component {
             <Route path="/Signup" exact component={Signup}/>
           </Switch>
         </BrowserRouter>
+        </div>
     );
   }
 }
